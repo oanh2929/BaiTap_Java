@@ -20,7 +20,7 @@ public class Circle implements GeometricObject {
 
     @Override
     public String toString(){
-        return " Circle [radius=" + radius + "]"
+        return " Circle [radius=" + radius + "]";
     }
 
     public double getRadius(){
