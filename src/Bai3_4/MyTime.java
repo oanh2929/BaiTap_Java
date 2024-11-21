@@ -1,137 +1,127 @@
 package Bai3_4;
 
 public class MyTime {
-    private int hour = 0;
-    private int minute = 0;
-    private int second = 0;
+    // Các thuộc tính của lớp MyTime
+    private int hour;   // Giá trị giờ (0 đến 23)
+    private int minute; // Giá trị phút (0 đến 59)
+    private int second; // Giá trị giây (0 đến 59)
 
-    // Constructor không tham số
-    public MyTime() {}
+    // Hàm khởi tạo mặc định
+    public MyTime() {
+        this.hour = 0;
+        this.minute = 0;
+        this.second = 0;
+    }
 
-    // Constructor với các tham số hour, minute, second
+    // Hàm khởi tạo với tham số giờ, phút và giây
     public MyTime(int hour, int minute, int second) {
-        setTime(hour, minute, second); // Sử dụng phương thức setTime để kiểm tra giá trị hợp lệ
+        setTime(hour, minute, second);
     }
 
-    // Phương thức setTime để thiết lập giờ, phút, giây (có kiểm tra giá trị hợp lệ)
+    // Phương thức thiết lập giờ, phút và giây
     public void setTime(int hour, int minute, int second) {
-        if (hour >= 0 && hour <= 23) {
-            this.hour = hour;
-        } else {
-            throw new IllegalArgumentException("Hour must be between 0 and 23");
-        }
-        if (minute >= 0 && minute <= 59) {
-            this.minute = minute;
-        } else {
-            throw new IllegalArgumentException("Minute must be between 0 and 59");
-        }
-        if (second >= 0 && second <= 59) {
-            this.second = second;
-        } else {
-            throw new IllegalArgumentException("Second must be between 0 and 59");
-        }
+        setHour(hour);
+        setMinute(minute);
+        setSecond(second);
     }
 
-    // Getter cho hour, minute, second
+    // Phương thức lấy giờ
     public int getHour() {
-        return hour;
+        return this.hour;
     }
 
+    // Phương thức lấy phút
     public int getMinute() {
-        return minute;
+        return this.minute;
     }
 
+    // Phương thức lấy giây
     public int getSecond() {
-        return second;
+        return this.second;
     }
 
-    // Setter cho hour, minute, second
+    // Phương thức thiết lập giờ
     public void setHour(int hour) {
         if (hour >= 0 && hour <= 23) {
             this.hour = hour;
-        } else {
-            throw new IllegalArgumentException("Hour must be between 0 and 23");
         }
     }
 
+    // Phương thức thiết lập phút
     public void setMinute(int minute) {
         if (minute >= 0 && minute <= 59) {
             this.minute = minute;
-        } else {
-            throw new IllegalArgumentException("Minute must be between 0 and 59");
         }
     }
 
+    // Phương thức thiết lập giây
     public void setSecond(int second) {
         if (second >= 0 && second <= 59) {
             this.second = second;
-        } else {
-            throw new IllegalArgumentException("Second must be between 0 and 59");
         }
     }
 
-    // Phương thức toString để hiển thị thời gian theo định dạng "HH:MM:SS"
-    @Override
+    // Phương thức chuyển đối tượng MyTime thành chuỗi theo định dạng HH:MM:SS
     public String toString() {
-        return String.format("%02d:%02d:%02d", hour, minute, second);
+        return String.format("%02d:%02d:%02d", this.hour, this.minute, this.second);
     }
 
-    // Các phương thức nextSecond, nextMinute, nextHour
+    // Phương thức tính giây tiếp theo
     public MyTime nextSecond() {
-        if (second < 59) {
-            second++;
-        } else {
-            second = 0;
+        this.second++;
+        if (this.second > 59) {
+            this.second = 0;
             nextMinute();
         }
         return this;
     }
 
+    // Phương thức tính phút tiếp theo
     public MyTime nextMinute() {
-        if (minute < 59) {
-            minute++;
-        } else {
-            minute = 0;
+        this.minute++;
+        if (this.minute > 59) {
+            this.minute = 0;
             nextHour();
         }
         return this;
     }
 
+    // Phương thức tính giờ tiếp theo
     public MyTime nextHour() {
-        if (hour < 23) {
-            hour++;
-        } else {
-            hour = 0;
+        this.hour++;
+        if (this.hour > 23) {
+            this.hour = 0;
         }
         return this;
     }
 
-    // Các phương thức previousSecond, previousMinute, previousHour/-strong/-heart:>:o:-((:-h public MyTime previousSecond() {
-        if (second > 0) {
-        second--;
-    } else {
-        second = 59;
-        previousMinute();
-    }
+    // Phương thức tính giây trước đó
+    public MyTime previousSecond() {
+        this.second--;
+        if (this.second < 0) {
+            this.second = 59;
+            previousMinute();
+        }
         return this;
+    }
+
+    // Phương thức tính phút trước đó
+    public MyTime previousMinute() {
+        this.minute--;
+        if (this.minute < 0) {
+            this.minute = 59;
+            previousHour();
+        }
+        return this;
+    }
+
+    // Phương thức tính giờ trước đó
+    public MyTime previousHour() {
+        this.hour--;
+        if (this.hour < 0) {
+            this.hour = 23;
+        }
+        return this;
+    }
 }
 
-public MyTime previousMinute() {
-    if (minute > 0) {
-        minute--;
-    } else {
-        minute = 59;
-        previousHour();
-    }
-    return this;
-}
-
-public MyTime previousHour() {
-    if (hour > 0) {
-        hour--;
-    } else {
-        hour = 23;
-    }
-    return this;
-}
-}
