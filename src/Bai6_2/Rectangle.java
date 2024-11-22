@@ -5,6 +5,5 @@ public class Rectangle implements GeometricObject {
     private double length;
 
     public Rectangle(double width, double length){
-        th
     }
 }
