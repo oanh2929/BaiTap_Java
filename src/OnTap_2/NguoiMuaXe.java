@@ -3,22 +3,22 @@ package OnTap_2;
 import java.time.LocalDate;
 
 public class NguoiMuaXe extends Nguoi implements Printable {
-    private String soTichDiem;
+    private int soTichDiem;
     private LocalDate ngayMua;
     private String tenXeMua;
 
-    public NguoiMuaXe(String hoTen, String soDienThoai, String soCanCuoc, String soTichDiem, LocalDate ngayMua, String tenXeMua){
+    public NguoiMuaXe(String hoTen, String soDienThoai, String soCanCuoc, int soTichDiem, LocalDate ngayMua, String tenXeMua){
         super(hoTen, soDienThoai, soCanCuoc);
         this.soTichDiem=soTichDiem;
         this.ngayMua=ngayMua;
         this.tenXeMua=tenXeMua;
     }
 
-    public String getSoTichDiem(){
+    public int getSoTichDiem(){
         return soTichDiem;
     }
 
-    public void setSoTichDiem(String soTichDiem){
+    public void setSoTichDiem(int soTichDiem){
         this.soTichDiem=soTichDiem;
     }
 
@@ -39,7 +39,7 @@ public class NguoiMuaXe extends Nguoi implements Printable {
     }
 
     public void print(){
-        System.out.println("Người mua xe: "+hoTen+",Số tích điểm: "+soTichDiem+",Ngày mua: "+ngayMua+",Tên xe: "+tenXeMua);
+        System.out.println("Người mua xe: "+hoTen+",Số điện thoại: "+soDienThoai+",Số tích điểm: "+soTichDiem+",Ngày mua: "+ngayMua+",Tên xe: "+tenXeMua);
     }
 
 }

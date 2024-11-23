@@ -2,21 +2,21 @@ package OnTap_2;
 
 import java.time.LocalDate;
 
-public class Xe {
+public class Xe implements Printable {
     private String tenXe;
     private String maSoXe;
     private String maSoThue;
-    private String giaTien;
+    private double giaTien;
     private LocalDate ngayNhap;
     private boolean trangThai;
 
-    public Xe(String tenXe, String maSoXe, String maSoThue, String giaTien, LocalDate ngayNhap, boolean trangThai){
+    public Xe(String tenXe, String maSoXe, String maSoThue, double giaTien, LocalDate ngayNhap, boolean trangThai){
         this.tenXe=tenXe;
         this.maSoThue=maSoThue;
         this.maSoXe=maSoXe;
         this.giaTien=giaTien;
         this.ngayNhap=ngayNhap;
-        this.trangThai=trangThai;
+        this.trangThai=true;
     }
 
     public String getTenXe(){
@@ -43,11 +43,11 @@ public class Xe {
         this.maSoThue=maSoThue;
     }
 
-    public String getGiaTien(){
+    public double getGiaTien(){
         return giaTien;
     }
 
-    public void setGiaTien(String giaTien){
+    public void setGiaTien(double giaTien){
         this.giaTien=giaTien;
     }
 
@@ -59,11 +59,15 @@ public class Xe {
         this.ngayNhap=ngayNhap;
     }
 
-    public boolean getTrangThai(){
+    public boolean isTrangThai(){
         return trangThai;
     }
 
     public void setTrangThai(boolean trangThai){
         this.trangThai=trangThai;
+    }
+
+    public void print(){
+        System.out.println("Xe:"+tenXe+",Giá:"+giaTien+",Trạng thái: "+trangThai);
     }
 }
