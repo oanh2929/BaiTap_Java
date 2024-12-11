@@ -1,6 +1,6 @@
 package OnTap_2;
 
-public class NguoiQuanLy extends Nguoi {
+public class NguoiQuanLy extends Nguoi implements Printable {
 
     public NguoiQuanLy(String hoTen, String soDienThoai, String soCanCuoc){
         super(hoTen, soDienThoai, soCanCuoc);

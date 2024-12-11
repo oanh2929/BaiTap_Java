@@ -17,6 +17,7 @@ public class TestMain {
         System.out.println("Danh sách xe còn lại:");
         quanLyXe.kiemTraXe();
 
+
         // In danh sách người mua
         System.out.println("Danh sách người mua:");
         quanLyXe.inDanhSachNguoiMua();
