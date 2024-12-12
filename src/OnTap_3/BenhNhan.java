@@ -73,7 +73,7 @@ public class BenhNhan extends Person {
 
     public void xuatVien(String ngayXuatVien) {
         if(ngayXuatVien.compareTo(ngayNhapVien)<0){
-            throw new IllegalAccessException("Ngày xuất viện không thể trước ngày nhập viện.");
+            System.out.println("Ngày xuất viện không thể trước ngày nhập viện.");
             this.ngayXuatVien=ngayXuatVien;
             this.daXuatVien=true;
         }
