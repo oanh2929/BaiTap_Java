@@ -1,6 +1,6 @@
 package OnTap_1;
 
-public class Nguoi {
+public class Nguoi implements Printable{
     protected String hoTen;
     protected String soDienThoai;
     protected String email;
@@ -36,7 +36,10 @@ public class Nguoi {
     }
 
     public void print() {
-        System.out.println("Họ tên: " + hoTen + ", Số điện thoại: " + soDienThoai + ", Email: " + email);
+        System.out.println("Họ tên: " + hoTen);
+        System.out.println("Số điện thoại: "+soDienThoai);
+        System.out.println("Email: "+email);
     }
+
 
 }

@@ -1,74 +1,73 @@
 package OnTap_1;
 
-import  java.util.*;
-import  java.time.LocalDate;
-import  java.util.ArrayList;
-import  java.util.Comparator;
-
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class QuanLyThuVien {
+    ArrayList<NguoiDoc> danhSachNguoiDoc = new ArrayList<>();
+    ArrayList<Sach> danhSachSach = new ArrayList<>();
+    Scanner sc = new Scanner(System.in);
 
-        private List<NguoiDoc>danhSachNguoiDoc = new ArrayList<>();
-        private List<Sach> danhSachSach = new ArrayList<>();
+    public void nhapThongTinNguoiDoc() {
+        System.out.println("Họ tên: ");
+        String hoTen = sc.nextLine();
+        System.out.println("Số điện thoại: ");
+        String soDienThoai = sc.nextLine();
+        System.out.println("Email: ");
+        String email = sc.nextLine();
+        System.out.println("Mã sinh viên: ");
+        String maSinhVien = sc.nextLine();
+        System.out.println("Nhập ngày mượn: ");
+        String ngayMuon = sc.nextLine();
+        System.out.println("NHập ngày trả: ");
+        String ngayTra = sc.nextLine();
 
-        // Nhập thông tin người đọc
-        public void nhapThongTinNguoiDoc(String hoTen, String soDienThoai, String email, String maSinhVien, LocalDate ngayMuon, LocalDate ngayTra) {
-            NguoiDoc nguoiDoc = new NguoiDoc(hoTen, soDienThoai, email, maSinhVien, ngayMuon, ngayTra);
-            danhSachNguoiDoc.add(nguoiDoc);
-        }
+        danhSachNguoiDoc.add(new NguoiDoc(hoTen, soDienThoai, email, maSinhVien, ngayMuon, ngayTra));
+        System.out.println("Đã thêm người đọc thành công!");
+    }
 
-        public void timNguoiDoc(LocalDate ngay) {
-            boolean found = false;
-            for (NguoiDoc nguoi : danhSachNguoiDoc) {
-                if (ngay.equals(nguoi.getNgayMuon()) || ngay.equals(nguoi.getNgayTra())) {
-                    nguoi.print();
-                    found = true;
-                }
-            }
-            if (!found) {
-                System.out.println("Không tìm thấy người đọc nào mượn hoặc trả sách vào ngày: " + ngay);
-            }
-        }
-
-        public void sapXepDanhSachNguoiDoc() {
-            Collections.sort(danhSachNguoiDoc, new Comparator<NguoiDoc>() {
-                @Override
-                public int compare(NguoiDoc o1, NguoiDoc o2) {
-                    return o1.getNgayMuon().compareTo(o2.getNgayMuon());
-                }
-            });
-        }
-
-        public void inDanhSachNguoiDoc() {
-            for (NguoiDoc nguoi : danhSachNguoiDoc) {
-                nguoi.print();
-            }
-        }
-
-        // Kiểm tra và in ra tên các cuốn sách đã mượn và còn lại
-        public void kiemTraSach() {
-            System.out.println("Sách đã được mượn:");
-            for (Sach sach : danhSachSach) {
-                if (sach.isTrangThai()) {
-                    System.out.println("-" + sach.getTenSach());
-                }
-            }
-            System.out.println("Sách còn lại trong thư viện:");
-            for (Sach sach : danhSachSach) {
-                if (!sach.isTrangThai()) {
-                    System.out.println("-" + sach.getTenSach());
-                }
-            }
-        }
-
-        public void themSach(Sach sach) {
-            danhSachSach.add(sach);
-        }
-
-        public void thoat() {
-            System.out.println("Thoát chương trình.");
+    public void inDanhSachSach(){
+        for( Sach sach: danhSachSach){
+            sach.print();
         }
     }
 
+    public void menu(){
+        danhSachSach.add(new Sach("Java Programming","B02",false));
+        danhSachSach.add(new Sach("Python","B04",false));
 
+        while(true){
+            System.out.println("\n--QUẢN LÝ THƯ VIỆN---");
+            System.out.println("1.Nhập thông tin người đọc");
+            System.out.println("2.Tìm người đọc và trả sách");
+            System.out.println("3.In danh sách");
+            System.out.println("4.Thoát");
+            System.out.println("Chọn chức năng");
+            int choice = Integer.parseInt(sc.nextLine());
+
+            switch (choice){
+                case 1:
+                    nhapThongTinNguoiDoc();
+                    break;
+                case 2:
+                    timNguoiDocVaTraSach();
+                    break;
+                case 3:
+                    inDanhSachSach();
+                    break;
+                case 4:
+                    System.out.println("Thoát chương trình");
+                    return;
+                default:
+                    System.out.println("Chọn lại");
+            }
+        }
+
+    }
+
+    public void timNguoiDocVaTraSach() {
+        System.out.println("Chức năng tìm người đọc và trả sách chưa được triển khai.");
+    }
+
+}
 

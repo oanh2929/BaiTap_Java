@@ -13,8 +13,8 @@ public class TestMain {
         quanLyBenhVien.themKhoa(khoa2);
 
         // Thêm phòng
-        Phong phong1 = new Phong("BO1","B",5,"5");
-        Phong phong2 = new Phong("B02","B",7,"7");
+        Phong phong1 = new Phong("BO1","B",5,5);
+        Phong phong2 = new Phong("B02","B",7,7);
         quanLyBenhVien.themPhong(phong1);
         quanLyBenhVien.themPhong(phong2);
 

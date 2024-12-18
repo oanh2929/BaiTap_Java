@@ -7,19 +7,19 @@ public class Phong {
     private String Idphong;
     private String tenPhong;
     private int soLuongGiuong;
-    private List<String>danhSachBenhNhan;
+    private int soLuongBenhNhan;
 
-    public Phong(String idphong, String tenPhong, int soLuongGiuong, String soLuongBenhNhan){
+    public Phong(String idphong, String tenPhong, int soLuongGiuong, int soLuongBenhNhan){
         this.Idphong=Idphong;
         this.tenPhong=tenPhong;
         this.soLuongGiuong=soLuongGiuong;
-        this.danhSachBenhNhan=new ArrayList<>();
+        this.soLuongBenhNhan=soLuongBenhNhan;
     }
 
     // Thêm bệnh nhân
     public void themBenhNhan(String idBenhNhan) {
-        if (danhSachBenhNhan.size() < soLuongGiuong) {
-            danhSachBenhNhan.add(idBenhNhan);
+        if (soLuongBenhNhan < soLuongGiuong) {
+            soLuongBenhNhan++;
         } else {
             System.out.println("Phòng đã đầy, không thể thêm bệnh nhân!");
         }
@@ -27,7 +27,11 @@ public class Phong {
 
     // Xóa bệnh nhân
     public void xoaBenhNhan(String idBenhNhan) {
-        danhSachBenhNhan.remove(idBenhNhan);
+        if(soLuongBenhNhan>0){
+            soLuongBenhNhan--;
+        } else {
+            System.out.println("Phòng không có bệnh nhan.");
+        }
     }
 
     // Hiển thị thông tin
@@ -35,7 +39,7 @@ public class Phong {
     public String toString() {
         return "ID Phòng: " + Idphong + ", Tên Phòng: " + tenPhong +
                 ", Số lượng giường: " + soLuongGiuong +
-                ", Danh sách bệnh nhân: " + danhSachBenhNhan;
+                ", Danh sách bệnh nhân: " + soLuongBenhNhan;
     }
 
 

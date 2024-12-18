@@ -40,7 +40,7 @@ public class Point {
     }
 
     @Override
-    private String toString(){
+    public String toString(){
         return "(" + x + ", " + y + ")";
     }
 }

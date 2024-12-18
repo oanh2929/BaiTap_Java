@@ -6,11 +6,11 @@ public class Xe implements Printable {
     private String tenXe;
     private String maSoXe;
     private String maSoThue;
-    private double giaTien;
-    private LocalDate ngayNhap;
+    private String giaTien;
+    private String ngayNhap;
     private boolean trangThai;
 
-    public Xe(String tenXe, String maSoXe, String maSoThue, double giaTien, LocalDate ngayNhap, boolean trangThai){
+    public Xe(String tenXe, String maSoXe, String maSoThue, String giaTien, String ngayNhap, boolean trangThai){
         this.tenXe=tenXe;
         this.maSoThue=maSoThue;
         this.maSoXe=maSoXe;
@@ -43,19 +43,19 @@ public class Xe implements Printable {
         this.maSoThue=maSoThue;
     }
 
-    public double getGiaTien(){
+    public String getGiaTien(){
         return giaTien;
     }
 
-    public void setGiaTien(double giaTien){
+    public void setGiaTien(String giaTien){
         this.giaTien=giaTien;
     }
 
-    public LocalDate getNgayNhap(){
+    public String getNgayNhap(){
         return ngayNhap;
     }
 
-    public void setNgayNhap(LocalDate ngayNhap){
+    public void setNgayNhap(String ngayNhap){
         this.ngayNhap=ngayNhap;
     }
 
@@ -68,6 +68,8 @@ public class Xe implements Printable {
     }
 
     public void print(){
-        System.out.println("Xe:"+tenXe+",Giá:"+giaTien+",Trạng thái: "+trangThai);
+        System.out.println("Xe:"+tenXe);
+        System.out.println("Giá: "+giaTien);
+        System.out.println("Trạng thái: "+ (trangThai?"Đã bán":"Chưa bán"));
     }
 }

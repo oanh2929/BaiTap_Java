@@ -1,6 +1,6 @@
 package OnTap_1;
 
-public class Sach {
+public class Sach implements Printable {
     private String tenSach;
     private String maSach;
     private boolean trangThai;// true: da muon; false: chưa muon
@@ -33,6 +33,13 @@ public class Sach {
 
     public void setTrangThai(boolean trangThai){
         this.trangThai=trangThai;
+    }
+
+    @Override
+    public void print(){
+        System.out.println("Tên sách:"+tenSach);
+        System.out.println("Mã sách:"+maSach);
+        System.out.println("Trạng thái: "+(trangThai?"Đã mượn":"Còn lại trong thư viện"));
     }
 
 

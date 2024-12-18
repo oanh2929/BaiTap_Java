@@ -2,12 +2,14 @@ package OnTap_3;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-    public class QuanLyBenhVien {
+public class QuanLyBenhVien {
         private List<Khoa> danhSachKhoa;
         private List<Phong> danhSachPhong;
         private List<BacSi> danhSachBacSi;
         private List<BenhNhan> danhSachBenhNhan;
+        Scanner sc = new Scanner(System.in);
 
         // Hàm tạo
         public QuanLyBenhVien() {

@@ -1,4 +1,6 @@
 package Bai6_2;
 
-public class GeometricObject {
+public interface GeometricObject {
+    double getArea();
+    double getPerimeter();
 }

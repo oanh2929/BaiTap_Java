@@ -1,14 +1,13 @@
 package OnTap_1;
 
-import java.time.LocalDate;
 
-public class NguoiDoc extends Nguoi implements Printable {
+public class NguoiDoc extends Nguoi {
     private String maSinhVien;
-    private LocalDate ngayMuon;
-    private LocalDate ngayTra;
+    private String ngayMuon;
+    private String ngayTra;
 
     // Constructor
-    public NguoiDoc(String hoTen, String soDienThoai, String email, String maSinhVien, LocalDate ngayMuon, LocalDate ngayTra) {
+    public NguoiDoc(String hoTen, String soDienThoai, String email, String maSinhVien, String ngayMuon, String ngayTra) {
         super(hoTen, soDienThoai, email);
         this.maSinhVien = maSinhVien;
         this.ngayMuon = ngayMuon;
@@ -24,24 +23,27 @@ public class NguoiDoc extends Nguoi implements Printable {
         this.maSinhVien = maSinhVien;
     }
 
-    public LocalDate getNgayMuon() {
+    public String getNgayMuon() {
         return ngayMuon;
     }
 
-    public void setNgayMuon(LocalDate ngayMuon) {
+    public void setNgayMuon(String ngayMuon) {
         this.ngayMuon = ngayMuon;
     }
 
-    public LocalDate getNgayTra() {
+    public String getNgayTra() {
         return ngayTra;
     }
 
-    public void setNgayTra(LocalDate ngayTra) {
+    public void setNgayTra(String ngayTra) {
         this.ngayTra = ngayTra;
     }
 
     @Override
     public void print() {
-        System.out.println("Người đọc: " + hoTen + ", Mã SV: " + maSinhVien + ", Ngày mượn: " + ngayMuon + ", Ngày trả: " + ngayTra);
+        System.out.println("Mã sinh viên: "+maSinhVien);
+        System.out.println("Ngày mượn: "+ngayMuon);
+        System.out.println("Ngày trả: "+ngayTra);
+
     }
 }

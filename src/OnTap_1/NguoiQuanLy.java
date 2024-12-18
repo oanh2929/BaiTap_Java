@@ -18,6 +18,7 @@ public class NguoiQuanLy extends Nguoi {
 
     @Override
     public void print(){
-        System.out.println("Người quản lý: "+ super.getHoTen()+",Số căn cước"+ soCanCuocCongDan);
+        super.print();
+        System.out.println("Số căn cước: "+ soCanCuocCongDan);
     }
 }
