@@ -4,22 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ThuVien {
-    private int id;
+    private int idThuVien;
     private String tenThuVien;
     private List<Sach> danhSachSach = new ArrayList<>();
     private List<NguoiDung> danhSachNguoiDung = new ArrayList<>();
 
-    public ThuVien(int id, String tenThuVien){
-        this.id=id;
+    public ThuVien(int idThuVien, String tenThuVien){
+        this.idThuVien=idThuVien;
         this.tenThuVien=tenThuVien;
     }
 
-    public int getId() {
-        return id;
+    public int getIdThuVien() {
+        return idThuVien;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdThuVien(int idThuVien) {
+        this.idThuVien = idThuVien;
     }
 
     public String getTenThuVien() {
@@ -78,7 +78,7 @@ public class ThuVien {
 
     @Override
     public String toString() {
-        return super.toString() +",Thư viện {" +",ID:"+id+",Tên thư viện:"+tenThuVien+",Tổng số sách:"+danhSachSach.size()+",Tổng số người dùng: "+danhSachSach.size()+'}';
+        return super.toString() +",Thư viện {" +",ID:"+idThuVien+",Tên thư viện:"+tenThuVien+",Tổng số sách:"+danhSachSach.size()+",Tổng số người dùng: "+danhSachSach.size()+'}';
     }
 }
 

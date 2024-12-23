@@ -34,15 +34,16 @@ public class Khoa {
         return danhSachBacSi;
     }
 
+
     //Thêm bác sĩ
     public void themBacSi(String idBacsi){
         danhSachBacSi.add(idBacsi);
     }
-
     //Xóa bác sĩ
     public void xoaBacSi(String idBacsi){
         danhSachBacSi.remove(idBacsi);
     }
+
 
     public String toString(){
         return "ID Khoa: "+idKhoa+"Tên Khoa: "+tenKhoa+"Danh sách bác sĩ: "+danhSachBacSi;

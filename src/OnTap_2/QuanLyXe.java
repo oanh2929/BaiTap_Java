@@ -61,6 +61,7 @@ public class QuanLyXe {
             }
         }
 
+
         if (!found) {
             System.out.println("Không tìm thấy người mua xe nào với ngày này.");
         }
@@ -92,9 +93,9 @@ public class QuanLyXe {
     }
 
 
-        public void menu(){
+        public void menu() {
 
-            while(true){
+            while (true) {
                 System.out.println("\n--QUẢN LÝ XE---");
                 System.out.println("1. Nhập thông tin người mua xe");
                 System.out.println("2. Tìm người mua xe");
@@ -105,7 +106,7 @@ public class QuanLyXe {
                 System.out.println("Chọn chức năng");
                 int choice = Integer.parseInt(sc.nextLine());
 
-                switch (choice){
+                switch (choice) {
                     case 1:
                         nhapThongTinNguoiMua();
                         break;
@@ -128,10 +129,9 @@ public class QuanLyXe {
                         System.out.println("Chọn lại");
                 }
             }
-
         }
-
 }
+
 
 
 

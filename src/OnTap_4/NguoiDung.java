@@ -1,19 +1,18 @@
 package OnTap_4;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class NguoiDung {
-    private int id;
+    private String id;
     private String ten;
     private String gioiTinh;
-    private LocalDate ngaySinh;
+    private String ngaySinh;
     private String lop;
     private String maSinhVien;
     private List<Sach> sachDangMuon = new ArrayList<>();
 
-    public NguoiDung(int id, String ten, String gioiTinh, LocalDate ngaySinh, String lop, String maSinhVien){
+    public NguoiDung(){
         this.id=id;
         this.ten=ten;
         this.gioiTinh=gioiTinh;
@@ -21,11 +20,11 @@ public class NguoiDung {
         this.lop=lop;
         this.maSinhVien=maSinhVien;
     }
-    public int getId(){
+    public String getId(){
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -45,11 +44,11 @@ public class NguoiDung {
         this.gioiTinh = gioiTinh;
     }
 
-    public LocalDate getNgaySinh() {
+    public String getNgaySinh() {
         return ngaySinh;
     }
 
-    public void setNgaySinh(LocalDate ngaySinh) {
+    public void setNgaySinh(String ngaySinh) {
         this.ngaySinh = ngaySinh;
     }
 
@@ -77,25 +76,33 @@ public class NguoiDung {
         this.sachDangMuon = sachDangMuon;
     }
 
-    public void themSach(Sach sach) {
+
+    public void kiemTraSachDangMuon() {
+        if (sachDangMuon.isEmpty()) {
+            System.out.println("Không có sách nào đang mượn");
+        } else {
+            System.out.println("Danh sách sách đang mượn:");
+            for (Sach sach : sachDangMuon) {
+                System.out.println(sach);
+            }
+        }
+    }
+
+    public void themSachDangMuon(Sach sach) {
         if (sachDangMuon.size() < 5) {
             sachDangMuon.add(sach);
         } else {
-            System.out.println("Không thể mượn quá 5 quyển sách.");
+            System.out.println("Người dùng đã mượn tối đa 5 sách.");
         }
     }
 
-    public void hienThiSachDangMuon() {
-        System.out.println("Danh sách sách đang mượn:");
-        for (Sach sach : sachDangMuon) {
-            System.out.println(sach);
-        }
-    }
-
-
-    public void xoaSach(Sach sach) {
+    // Phương thức xóa sách khỏi danh sách sách đang mượn
+    public void xoaSachDangMuon(Sach sach) {
         sachDangMuon.remove(sach);
     }
+
+
+
 
     @Override
     public String toString() {

@@ -1,26 +1,26 @@
 package OnTap_4;
 
 public class Sach {
-    private int id;
+    private String idSach;
     private String tenSach;
     private String tacGia;
     private int soLuongSach;
     private int soLuongDaMuon;
 
-    public Sach(int id,String tenSach, String tacGia,int soLuongSach) {
-        this.id = id;
+    public Sach(String idSach,String tenSach, String tacGia,int soLuongSach) {
+        this.idSach = idSach;
         this.tenSach = tenSach;
         this.tacGia = tacGia;
         this.soLuongSach = soLuongSach;
         this.soLuongDaMuon = 0; //mặc định
     }
 
-    public int getId(){
-        return id;
+    public String getIdSach(){
+        return idSach;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdsach(String idSach) {
+        this.idSach = idSach;
     }
 
     public String getTenSach() {
@@ -67,6 +67,6 @@ public class Sach {
 
     @Override
     public String toString() {
-        return super.toString() + "Sach{"+"id="+id+",Tên sách: "+tenSach+", Tác giả:"+tacGia+",soLuongConLai="+(soLuongSach-soLuongDaMuon)+",Tổng số lượng: "+soLuongSach+'}';
+        return super.toString() + "Sach{"+"id sách="+idSach+",Tên sách: "+tenSach+", Tác giả:"+tacGia+",soLuongConLai="+(soLuongSach-soLuongDaMuon)+",Tổng số lượng: "+soLuongSach+'}';
     }
 }

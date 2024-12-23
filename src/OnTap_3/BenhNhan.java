@@ -1,8 +1,5 @@
 package OnTap_3;
 
-import java.text.ParseException;
-import java.time.LocalDate;
-
 public class BenhNhan extends Person {
     private String idbenhNhan;
     private String idbenh;
@@ -12,11 +9,11 @@ public class BenhNhan extends Person {
     private boolean daXuatVien;
     private String idbacSi;
 
-    public BenhNhan(String ten, int namSinh, String diaChi,String benhNhan, String benh, String soPhong, String ngayNhapVien, String ngayXuatVien, boolean daXuatVien, String bacSi){
+    public BenhNhan(String ten, int namSinh, String diaChi,String idbenhNhan, String idbenh, String idsoPhong, String ngayNhapVien, String ngayXuatVien){
         super(ten,namSinh,diaChi);
-        this.idbenhNhan=benhNhan;
-        this.idbenh=benh;
-        this.idsoPhong=soPhong;
+        this.idbenhNhan=idbenhNhan;
+        this.idbenh=idbenh;
+        this.idsoPhong=idsoPhong;
         this.ngayNhapVien=ngayNhapVien;
         this.ngayXuatVien="";
         this.daXuatVien=false;
@@ -59,6 +56,15 @@ public class BenhNhan extends Person {
         return ngayXuatVien;
     }
 
+
+    public void setNgayXuatVien(String ngayXuatVien) {
+        if(ngayXuatVien.compareTo(ngayNhapVien)<0){
+            System.out.println("Ngày xuất viện không thể trước ngày nhập viện.");
+            this.ngayXuatVien=ngayXuatVien;
+            this.daXuatVien=true;
+        }
+    }
+
     public boolean isDaXuatVien(){
         return daXuatVien;
     }
@@ -71,13 +77,7 @@ public class BenhNhan extends Person {
         this.idbacSi = idbacSi;
     }
 
-    public void xuatVien(String ngayXuatVien) {
-        if(ngayXuatVien.compareTo(ngayNhapVien)<0){
-            System.out.println("Ngày xuất viện không thể trước ngày nhập viện.");
-            this.ngayXuatVien=ngayXuatVien;
-            this.daXuatVien=true;
-        }
-    }
+
 
     public void thayDoiBacSi(String idbacSi){
         this.idbacSi=idbacSi;

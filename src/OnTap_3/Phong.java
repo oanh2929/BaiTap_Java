@@ -9,7 +9,7 @@ public class Phong {
     private int soLuongGiuong;
     private int soLuongBenhNhan;
 
-    public Phong(String idphong, String tenPhong, int soLuongGiuong, int soLuongBenhNhan){
+    public Phong(String Idphong, String tenPhong, int soLuongGiuong, int soLuongBenhNhan){
         this.Idphong=Idphong;
         this.tenPhong=tenPhong;
         this.soLuongGiuong=soLuongGiuong;
