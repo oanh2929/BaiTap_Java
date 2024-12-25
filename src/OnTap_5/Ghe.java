@@ -7,7 +7,6 @@ public class Ghe {
         private boolean trangThai;
         private double giaCoBan;
 
-        // Constructor
         public Ghe(String maGhe, char hangGhe, double giaCoBan) {
             this.maGhe = maGhe;
             this.hangGhe = hangGhe;
@@ -56,7 +55,6 @@ public class Ghe {
             this.giaCoBan = giaCoBan;
         }
 
-        // Phương thức toString để hiển thị thông tin ghế
         @Override
         public String toString() {
             return "Mã ghế: " + maGhe + ", Hạng ghế: " + hangGhe + ", Trạng thái: " + (trangThai ? "Trống" : "Đã đặt") + ", Giá cơ bản: " + giaCoBan + " VND";
